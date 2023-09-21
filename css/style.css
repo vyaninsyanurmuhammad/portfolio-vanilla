@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #1d2027;
+    width: 100%;
+    height: 100vh;
+}
+
+h1 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    background-color: transparent;
+    width: 100%;
+}
+
+section {
+    display: flex;
+    background-color: transparent;
+}
+
+/* hover glow pointer */
+
+.container {
+    --x-px: calc(var(--x) * 1px);
+    --y-px: calc(var(--y) * 1px);
+    --border: 2px;
+    /* background: rgba(255, 255, 255, 0.125); */
+    border-radius: 0.5rem;
+    /* overflow: hidden; */
+
+}
+
+.container:before, .container:after {
+    content: "";
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    inset: 0px;
+    border-radius: inherit;
+    background: radial-gradient(600px circle at var(--x-px) var(--y-px), rgba(30, 76, 101, 0.1), transparent 80%);
+}
+
+.container:before {
+    z-index: 1;
+}
+
+.container:after {
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.4s ease;
+}
+
+.container:hover:after {
+    opacity: 1;
+}
+
+/* navbar */
+
+header#navbar {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 48px;
+    z-index: 40;
+
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    border-radius: 12px;
+    width: fit-content;
+    overflow: hidden;
+    padding-right: 12px;
+    background-color: #FFFF;
+}
+
+nav>ul {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+nav>ul>li {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: relative;
+
+}
+
+nav>ul>li>span {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-weight: 500;
+    font-size: 16px;
+    width: 100%;
+    overflow: hidden;
+}
+
+nav>ul>li.group>span::after {
+    content: "";
+    height: 0px;
+    position: absolute;
+    display: block;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    background-color: red;
+    transition: all .25s ease-in;
+}
+
+nav>ul>li.group>span:hover:after {
+    height: 4px;
+}
+
+nav>ul>li.group>span:hover {
+    color: red;
+}
+
+nav>ul>li#home {
+    background-color: #f9fafc;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+nav>ul>li#home:hover {
+    background-color: #EDEDED;
+}
+
+/* hero */
+
+
+section#hero {
+    top: 0;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #FFFF;
+    margin-right: 96px;
+    margin-left: 192px;
+}
+
+section#hero>.hero-info {
+    width: 100%;
+    margin-right: 48px;
+
+}
+
+section#hero>.hero-images {
+    position: relative;
+    display: flex;
+    height: min-content;
+}
+
+.hero-images>img {
+    height: 204px;
+    width: 204px;
+    border-radius: 9999px;
+}
+
+h1.title {
+    font-size: 28px;
+}
+
+p.subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+p.description {
+    font-size: 18px;
+    color: #B6B6B6;
+    margin-bottom: 12px;
+}
+
+.circle-logo {
+    margin: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 9999px;
+    background-color: #FFFF;
+
+}
+
+.circle-logo.react {
+    right: -40px;
+
+}
+
+.circle-logo.redux {
+    right: -60px;
+    bottom: 90px;
+}
+
+.circle-logo.flutter {
+    right: -50px;
+    bottom: 20px;
+}
+
+.circle-logo.react>img {
+    height: 60%;
+}
+
+.circle-logo.redux>img {
+    height: 50%;
+}
+
+.circle-logo.flutter>img {
+    height: 50%;
+}
+
+
+
+/* about */
+
+section#leftside {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: start;
+    align-items: start;
+    color: #FFFF;
+    margin-right: 192px;
+    margin-left: 96px;
+    margin-top: 204px;
+}
+
+section#leftside>article#about>p {
+    display: flex;
+    margin-bottom: 18px;
+    color: #B6B6B6;
+    font-weight: 300;
+}
